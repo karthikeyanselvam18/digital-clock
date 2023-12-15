@@ -1,0 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.container {
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(90deg, #1cb5e0 0%, #000851 100%);
+}
+span {
+  font-size: 5rem;
+  color: rgb(255, 255, 255);
+}
