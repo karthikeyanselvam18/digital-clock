@@ -1,14 +1,19 @@
-const clock = document.querySelector(".clock");
-
+const clockText = document.querySelector(".clock");
+const dateText = document.querySelector(".date");
+console.log(new Date());
 setInterval(() => {
-  const date = new Date();
-  let hour = date.getHours();
-  const min = date.getMinutes().toString().padStart(2, "0");
-  const sec = date.getSeconds().toString().padStart(2, "0");
+  const dateObject = new Date();
+  let hour = dateObject.getHours();
+  const min = dateObject.getMinutes().toString().padStart(2, "0");
+  const sec = dateObject.getSeconds().toString().padStart(2, "0");
   const meridiem = hour > 12 ? "PM" : "AM";
   if (hour > 12) hour -= 12;
-  console.log(hour);
-  clock.innerHTML = `${hour
+  clockText.innerHTML = `${hour
     .toString()
     .padStart(2, "0")}:${min}:${sec} ${meridiem}`;
+
+  const date = dateObject.getDate();
+  const month = dateObject.getMonth();
+  const year = dateObject.getFullYear();
+  dateText.innerHTML = `${date}.${month}.${year}`;
 }, 500);
