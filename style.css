@@ -16,7 +16,14 @@ body {
   flex-direction: column;
 }
 
-.date {
+.date{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.day,
+.year {
   font-size: 2rem;
   color: rgb(255, 255, 255);
 }

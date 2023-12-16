@@ -1,6 +1,6 @@
 const clockText = document.querySelector(".clock");
-const dateText = document.querySelector(".date");
-console.log(new Date());
+const dayText = document.querySelector(".day");
+const yearText = document.querySelector(".year");
 setInterval(() => {
   const dateObject = new Date();
   let hour = dateObject.getHours();
@@ -13,7 +13,24 @@ setInterval(() => {
     .padStart(2, "0")}:${min}:${sec} ${meridiem}`;
 
   const date = dateObject.getDate();
+  const day = dateObject.getDay();
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const month = dateObject.getMonth();
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
   const year = dateObject.getFullYear();
-  dateText.innerHTML = `${date}.${month}.${year}`;
+  dayText.innerHTML = `${days[day]}, ${date} ${months[month]}`;
+  yearText.innerHTML = `${year}`;
 }, 500);
